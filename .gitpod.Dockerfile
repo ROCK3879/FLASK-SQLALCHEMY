@@ -13,3 +13,4 @@ RUN sudo apt-get update && \
 
 # Ensure PostgreSQL is running
 RUN sudo service postgresql start
+
