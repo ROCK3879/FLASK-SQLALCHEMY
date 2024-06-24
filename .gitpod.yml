@@ -1,0 +1,14 @@
+image:
+  file: .gitpod.Dockerfile
+
+tasks:
+  - init: |
+      sudo service postgresql start
+      sudo -u postgres psql -c "CREATE USER gitpod WITH PASSWORD 'gitpod';"
+      sudo -u postgres psql -c "ALTER USER gitpod WITH SUPERUSER;"
+      sudo -u postgres createdb -O gitpod mydatabase
+    command: |
+      psql --version
+      psql -U gitpod -d mydatabase -c "\l"
+
+
